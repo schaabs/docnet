@@ -7,11 +7,11 @@ using System.Xml;
 
 namespace docnet
 {
-    internal class MemberXDocReader : XDocReaderBase
+    internal class XDocReader : XDocReaderBase
     {
-        private Dictionary<string, List<XDocMemberContentReader>> _contentDict;
+        private Dictionary<string, XDocTopicReader> _topicDict;
 
-        public MemberXDocReader(XmlReader reader) : base(reader)
+        public XDocMemberReader(XmlReader reader) : base(reader)
         {
             this.XDocId = ReadAttributeValue(reader, "name");
         }
@@ -29,9 +29,9 @@ namespace docnet
             }
         }
 
-        private void AddContent(XDocMemberContentReader content)
+        private void AddTopic(XmlReader content)
         {
-            List<XDocMemberContentReader> topicList = null;
+            XDocTopicReader topicList = null;
 
             if (!_contentDict.TryGetValue(content.Topic, out topicList))
             {

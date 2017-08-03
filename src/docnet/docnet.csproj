@@ -42,14 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocId.cs" />
-    <Compile Include="MemberXDocReader.cs" />
+    <Compile Include="MemberInfoExtensions.cs" />
+    <Compile Include="XDocMemberReader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XDocTopic.cs" />
+    <Compile Include="XDocContentReader.cs" />
     <Compile Include="XDocReaderBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
